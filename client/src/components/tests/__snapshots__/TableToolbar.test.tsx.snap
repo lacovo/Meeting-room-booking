@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TableToolbar /> Should render and match the snapshot 1`] = `
+<WithStyles(ForwardRef(Toolbar))>
+  <WithStyles(ForwardRef(Typography))
+    component="div"
+    id="tableTitle"
+    variant="h6"
+  >
+    Bookings
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Tooltip))
+    title="Filter list"
+  >
+    <WithStyles(ForwardRef(IconButton))
+      onClick={[Function]}
+    >
+      <Memo(ForwardRef(FilterListIcon)) />
+    </WithStyles(ForwardRef(IconButton))>
+  </WithStyles(ForwardRef(Tooltip))>
+  <Filter
+    handleClose={[Function]}
+    open={false}
+  />
+  <WithStyles(ForwardRef(FormControlLabel))
+    className="switch-all"
+    control={
+      <ForwardRef(WithStyles)
+        defaultChecked={true}
+        onChange={[Function]}
+      />
+    }
+    label="Display valid booking"
+  />
+</WithStyles(ForwardRef(Toolbar))>
+`;

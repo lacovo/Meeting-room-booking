@@ -1,0 +1,26 @@
+body {
+  /* Disables pull-to-refresh and swipe navigation */
+  overscroll-behavior: none;
+}
+
+.header-button {
+  position: absolute!important;
+  right: 15px;
+}
+
+.switch-all {
+  position: absolute!important;
+  right: 15px;
+}
+
+.MuiDialogActions-root {
+  justify-content: center!important;
+}
+
+.filter-div {
+  margin-top: 20px;
+}
+
+.MuiTypography-subtitle1 .MuiSvgIcon-root {
+  margin-top: 5px;
+}

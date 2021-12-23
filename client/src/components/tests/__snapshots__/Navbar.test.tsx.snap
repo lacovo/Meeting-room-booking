@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> Should render and match the snapshot 1`] = `
+<Styled(MuiBox)
+  sx={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <WithStyles(ForwardRef(AppBar))
+    position="static"
+  >
+    <WithStyles(ForwardRef(Toolbar))>
+      <WithStyles(ForwardRef(Typography))
+        component="div"
+        variant="h6"
+      />
+      <WithStyles(ForwardRef(Button))
+        className="header-button"
+        color="inherit"
+        onClick={[Function]}
+      >
+        return
+      </WithStyles(ForwardRef(Button))>
+    </WithStyles(ForwardRef(Toolbar))>
+  </WithStyles(ForwardRef(AppBar))>
+</Styled(MuiBox)>
+`;
