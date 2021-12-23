@@ -17,7 +17,7 @@ import {
   IconButton,
 } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { IAppState, IStatus, IRoom, IBooking } from '../types';
+import { IAppState, IStatus, IRoom, IBooking, IMatch } from '../types';
 import { setStatus, loadBookings } from '../redux';
 import {
   CellWifi,
@@ -79,6 +79,9 @@ function RoomDetail() {
   const bookings: IBooking[] = useSelector((state: IAppState) => {
     return state.bookings;
   });
+  const match: IMatch = useSelector((state: IAppState) => {
+    return state.match;
+  });
   const [todayBooking, setTodayBooking] = useState([]);
   const [start, setStart] = useState(times);
   const [end, setEnd] = useState<any>([]);
@@ -129,8 +132,10 @@ function RoomDetail() {
     dispatch(setStatus(IStatus.LOADED));
   }
   useEffect(() => {
-    setBookInfo(book[0]);
-    setEnd([book[0].finishtime]);
+    if(book.length > 0) {
+      setBookInfo(book[0]);
+      setEnd([book[0].finishtime]);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -236,9 +241,24 @@ function RoomDetail() {
     });
     const delJson = await delRes.json();
     if (book.length === 0) {
-      const newRows = bookings.push(bookInfo);
-      dispatch(loadBookings(newRows as any));
-      book.push(bookInfo);
+      let query =
+      'id=' +
+      match.roomId +
+      '&name=' +
+      match.roomName +
+      '&date=' +
+      match.date +
+      '&host=' +
+      match.host +
+      '&guest=' +
+      match.guest +
+      '&isall=' +
+      match.is_all +
+      '&orderby=' +
+      match.orderBy;
+      const res = await fetch('/bookings?' + query);    
+      const resJson = await res.json();
+      dispatch(loadBookings(resJson as any));
     } else {
       let newRows = bookings.filter((r) => {
         return r.bookid.toString() !== bookId;
