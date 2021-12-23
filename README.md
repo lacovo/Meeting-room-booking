@@ -8,7 +8,7 @@
 
  To run
 
- npm start
+ npm start (it may take a while depending on network speed)
 
  To build
 
