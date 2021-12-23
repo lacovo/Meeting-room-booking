@@ -4,11 +4,11 @@
 
  To install Run 
  
- npm install
+ npm install(it may take a while depending on network speed)
 
  To run
 
- npm start (it may take a while depending on network speed)
+ npm start 
 
  To build
 
