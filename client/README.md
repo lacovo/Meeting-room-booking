@@ -4,7 +4,7 @@
 
  To install Run 
  
- npm install
+ npm install (it may take a while depending on network speed)
 
  To run
 
