@@ -122,7 +122,7 @@ function RoomDetail() {
     let tBooking = roomJson.filter((r: any) => {
       return r.date === bookInfo.date && r.bookid !== bookInfo.bookid;
     });
-    if (bookInfo.date === '') {
+    if (book.length > 0) {
       tBooking = roomJson.filter((r: any) => {
         return r.date === book[0].date && r.bookid !== book[0].bookid;
       });
